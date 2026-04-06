@@ -219,8 +219,8 @@ def draw_two_probe_diagram():
                   name="Probe 1")
 
     # Probe 2 (right)
-    fig.add_shape(type="rect", x0=8.9, y0=2.2, x1=9.7, y0=2.8,
-                  fillcolor='#3498db', line=dict(color='#2980b9', width=2),
+fig.add_shape(type="rect", x0=8.9, y0=2.2, x1=9.7, y1=2.8)
+fillcolor='#3498db', line=dict(color='#2980b9', width=2),
                   name="Probe 2")
 
     # Current arrows
