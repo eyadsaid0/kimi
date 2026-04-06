@@ -218,29 +218,29 @@ def draw_two_probe_diagram():
                   fillcolor='#3498db', line=dict(color='#2980b9', width=2),
                   name="Probe 1")
 
-    # Probe 2 (right)
-fig.add_shape(type="rect", x0=8.9, y0=2.2, x1=9.7, y1=2.8)
-fillcolor='#3498db', line=dict(color='#2980b9', width=2),
+    # Probe 2 (right) - FIXED syntax here
+    fig.add_shape(type="rect", x0=8.9, y0=2.2, x1=9.7, y1=2.8,
+                  fillcolor='#3498db', line=dict(color='#2980b9', width=2),
                   name="Probe 2")
 
     # Current arrows
     fig.add_annotation(x=0.7, y=3.5, text="I", font=dict(size=16, color='#e74c3c'),
-                      showarrow=True, arrowhead=2, ax=0, ay=-20)
+                       showarrow=True, arrowhead=2, ax=0, ay=-20)
     fig.add_annotation(x=9.3, y=3.5, text="I", font=dict(size=16, color='#e74c3c'),
-                      showarrow=True, arrowhead=2, ax=0, ay=-20)
+                       showarrow=True, arrowhead=2, ax=0, ay=-20)
 
     # Voltage labels
     fig.add_annotation(x=0.7, y=1.5, text="V", font=dict(size=14, color='#9b59b6'),
-                      showarrow=True, arrowhead=2, ax=0, ay=20)
+                       showarrow=True, arrowhead=2, ax=0, ay=20)
     fig.add_annotation(x=9.3, y=1.5, text="V", font=dict(size=14, color='#9b59b6'),
-                      showarrow=True, arrowhead=2, ax=0, ay=20)
+                       showarrow=True, arrowhead=2, ax=0, ay=20)
 
     # Labels
     fig.add_annotation(x=5, y=4.2, text="CURRENT + VOLTAGE",
-                      font=dict(size=14, color='#2c3e50', family='Arial'),
-                      showarrow=False)
+                       font=dict(size=14, color='#2c3e50', family='Arial'),
+                       showarrow=False)
     fig.add_annotation(x=5, y=1.0, text="Contact Points",
-                      font=dict(size=12, color='#7f8c8d'), showarrow=False)
+                       font=dict(size=12, color='#7f8c8d'), showarrow=False)
 
     fig.update_layout(
         showlegend=False,
@@ -275,8 +275,8 @@ def draw_four_probe_diagram():
     fig.add_shape(type="rect", x0=6.9, y0=2.2, x1=7.7, y1=2.8,
                   fillcolor='#3498db', line=dict(color='#2980b9', width=2))
 
-    # Probe 4 (outer right - current)
-    fig.add_shape(type="rect", x0=9.1, y0=2.2, x1=9.9, y0=2.8,
+    # Probe 4 (outer right - current) - FIXED y0 to y1 here
+    fig.add_shape(type="rect", x0=9.1, y0=2.2, x1=9.9, y1=2.8,
                   fillcolor='#e74c3c', line=dict(color='#c0392b', width=2))
 
     # Current flow lines
@@ -292,19 +292,19 @@ def draw_four_probe_diagram():
     fig.add_shape(type="line", x0=2.7, y0=1.3, x1=7.3, y1=1.3,
                   line=dict(color='#9b59b6', width=2))
     fig.add_annotation(x=5, y=0.8, text="V (Voltage Measurement)",
-                      font=dict(size=12, color='#9b59b6'), showarrow=False)
+                       font=dict(size=12, color='#9b59b6'), showarrow=False)
 
     # Current injection
     fig.add_annotation(x=0.5, y=4.2, text="I (Current Source)",
-                      font=dict(size=12, color='#e74c3c'), showarrow=False)
+                       font=dict(size=12, color='#e74c3c'), showarrow=False)
     fig.add_annotation(x=9.5, y=4.2, text="I (Current Sink)",
-                      font=dict(size=12, color='#e74c3c'), showarrow=False)
+                       font=dict(size=12, color='#e74c3c'), showarrow=False)
 
     # Labels
     fig.add_annotation(x=5, y=4.8, text="CURRENT PROBES (Outer)",
-                      font=dict(size=12, color='#e74c3c'), showarrow=False)
+                       font=dict(size=12, color='#e74c3c'), showarrow=False)
     fig.add_annotation(x=5, y=5.3, text="VOLTAGE PROBES (Inner)",
-                      font=dict(size=12, color='#3498db'), showarrow=False)
+                       font=dict(size=12, color='#3498db'), showarrow=False)
 
     # Probe spacing annotations
     fig.add_annotation(x=1.5, y=2.5, text="s", font=dict(size=10, color='#7f8c8d'), showarrow=False)
@@ -335,33 +335,34 @@ def draw_comparison_diagram():
                   row=1, col=1)
     fig.add_shape(type="rect", x0=0.3, y0=2.2, x1=1.1, y1=2.8,
                   fillcolor='#3498db', row=1, col=1)
-    fig.add_shape(type="rect", x0=8.9, y0=2.2, x1=9.7, y0=2.8,
+    # FIXED y0 to y1 here
+    fig.add_shape(type="rect", x0=8.9, y0=2.2, x1=9.7, y1=2.8,
                   fillcolor='#3498db', row=1, col=1)
 
     # Error indicators for two-probe
     fig.add_annotation(x=0.7, y=1.5, text="⚠ Contact R",
-                      font=dict(size=10, color='#e74c3c'), showarrow=False, row=1, col=1)
+                       font=dict(size=10, color='#e74c3c'), showarrow=False, row=1, col=1)
     fig.add_annotation(x=9.3, y=1.5, text="⚠ Contact R",
-                      font=dict(size=10, color='#e74c3c'), showarrow=False, row=1, col=1)
+                       font=dict(size=10, color='#e74c3c'), showarrow=False, row=1, col=1)
 
     fig.add_annotation(x=5, y=4, text="R_total = R_contact + R_wires + R_sample",
-                      font=dict(size=10, color='#c0392b'), showarrow=False, row=1, col=1)
+                       font=dict(size=10, color='#c0392b'), showarrow=False, row=1, col=1)
 
-    # Right: Four-probe
+    # Right: Four-probe - FIXED all y0 to y1 here
     fig.add_shape(type="rect", x0=0.5, y0=2, x1=9.5, y1=3,
                   fillcolor='#bdc3c7', line=dict(color='#7f8c8d', width=2),
                   row=1, col=2)
-    fig.add_shape(type="rect", x0=0.1, y0=2.2, x1=0.9, y0=2.8,
+    fig.add_shape(type="rect", x0=0.1, y0=2.2, x1=0.9, y1=2.8,
                   fillcolor='#2ecc71', row=1, col=2)
-    fig.add_shape(type="rect", x0=2.3, y0=2.2, x1=3.1, y0=2.8,
+    fig.add_shape(type="rect", x0=2.3, y0=2.2, x1=3.1, y1=2.8,
                   fillcolor='#3498db', row=1, col=2)
-    fig.add_shape(type="rect", x0=6.9, y0=2.2, x1=7.7, y0=2.8,
+    fig.add_shape(type="rect", x0=6.9, y0=2.2, x1=7.7, y1=2.8,
                   fillcolor='#3498db', row=1, col=2)
-    fig.add_shape(type="rect", x0=9.1, y0=2.2, x1=9.9, y0=2.8,
+    fig.add_shape(type="rect", x0=9.1, y0=2.2, x1=9.9, y1=2.8,
                   fillcolor='#2ecc71', row=1, col=2)
 
     fig.add_annotation(x=5, y=4, text="Only V measured, I doesn't flow through V meter",
-                      font=dict(size=10, color='#27ae60'), showarrow=False, row=1, col=2)
+                       font=dict(size=10, color='#27ae60'), showarrow=False, row=1, col=2)
 
     fig.update_layout(
         showlegend=False,
